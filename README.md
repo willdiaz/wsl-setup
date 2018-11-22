@@ -42,4 +42,6 @@ Please note that the Linux apps from the Microsoft Store don't have many develop
 
 ## Future Updates
 
-I plan on adding MariaDB server and client next. When I get a full set of tools and aliases in place, I'd like to explore creating a [Docker Container](https://www.docker.com/resources/what-container) with this configuration. I also intend on condensing the above set of wget statements to a single one and let the script handle the gettings of files.
+I plan on adding MariaDB server and client next. When I get a full set of tools and aliases in place, I'd like to explore creating a [Docker Container](https://www.docker.com/resources/what-container) with this configuration.
+
+I also intend on condensing the above set of wget statements to a single one and let the script handle the gettings of files.
