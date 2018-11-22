@@ -37,6 +37,3 @@ sudo npm install npm@latest -g
 
 sudo chown -R $USER:$(id -gn $USER) /home/$USER/.config
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
-echo "Close the terminal, open a new window and type: command -v nvm"
-echo "If you see 'nvm' displayed to you, then you are good to go!"
