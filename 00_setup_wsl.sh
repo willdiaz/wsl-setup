@@ -49,6 +49,7 @@ else
 fi
 
 wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/03_install_angular_cli.sh
+# https://www.shellhacks.com/bash-test-if-file-exists/
 test -f ./03_install_angular_cli.sh
 if [ $? -eq 0 ]; then
     echo "======================"
