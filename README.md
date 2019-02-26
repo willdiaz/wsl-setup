@@ -24,12 +24,7 @@ Please note that the Linux apps from the Microsoft Store don't have many develop
 1. Run the following commands to download the scripts:
 
     ```
-        cd ~/
         wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/00_setup_wsl.sh
-        wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/01_setup_deb.sh
-        wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/02_install_npm.sh
-        wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/03_install_angular_cli.sh
-        wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/04_install_php.sh
     ```
 
 1. Run the command:
@@ -44,4 +39,6 @@ Please note that the Linux apps from the Microsoft Store don't have many develop
 
 I plan on adding MariaDB server and client next. When I get a full set of tools and aliases in place, I'd like to explore creating a [Docker Container](https://www.docker.com/resources/what-container) with this configuration.
 
-I also intend on condensing the above set of wget statements to a single one and let the script handle the gettings of files.
+## CHANGELOG
+
++ **2018-11-28:** The *00_setup_wsl.sh* script handles downloading all of the scripts now, making it simple to download and run it. I'm debating whether or not this really needs to be a series of scripts. I should consider consolidating them into a single script.
