@@ -11,7 +11,14 @@ read -p 'Would you like to continue? [y/N]' answer
 # END THE SCRIPT IF THE USER WANTS TO
 if [ "$answer" != "y" ] && [ "$answer" != "Y" ]
 then
-    exit
+  exit
+fi
+
+# BYPASS SSL CHECK IF THE FLAG IS SET
+$flag = ""
+if [ $1 == "" ]
+then
+  $flag = "--no-check-certificate"
 fi
 
 # CREATE BASH ALIASES
@@ -28,7 +35,7 @@ if [ $? -eq 1  ]; then
 fi
 
 # RUN THE INSTALL SCRIPTS
-wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/01_setup_deb.sh
+wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/01_setup_deb.sh
 test -f ./01_setup_deb.sh
 if [ $? -eq 0 ]; then
     echo "==========================="
@@ -39,7 +46,7 @@ else
     echo "Distro setup script failed to download!"
 fi
 
-wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/02_install_npm.sh
+wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/02_install_npm.sh
 test -f ./02_install_npm.sh
 if [ $? -eq 0 ]; then
     echo "============================"
@@ -50,7 +57,7 @@ else
     echo "NPM install script failed to download!"
 fi
 
-wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/03_install_angular_cli.sh
+wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/03_install_angular_cli.sh
 test -f ./03_install_angular_cli.sh
 if [ $? -eq 0 ]; then
     echo "======================"
@@ -61,7 +68,7 @@ else
     echo "Angular CLI setup script failed to download!"
 fi
 
-wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/04_install_php.sh
+wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/04_install_php.sh
 test -f ./04_install_php.sh
 if [ $? -eq 0 ]; then
     echo "==========================="
@@ -72,7 +79,7 @@ else
     echo "PHP setup script failed to download!"
 fi
 
-wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/05_install_mariadb.sh
+wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/05_install_mariadb.sh
 test -f ./05_install_mariadb.sh
 if [ $? -eq 0 ]; then
     echo "==========================="
