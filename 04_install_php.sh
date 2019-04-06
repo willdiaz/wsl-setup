@@ -45,5 +45,5 @@ if [ -d "/usr/local/bin" ]
 then
 	sudo mv ./composer.phar /usr/local/bin/composer
 else
-    echo /usr/local/bin not found - composer.phar not moved
+  echo "/usr/local/bin not found - composer.phar not moved"
 fi

@@ -3,8 +3,7 @@
 echo ""
 echo "==========================================================="
 echo "You are about to install several applications, including:"
-echo "node.js, php, python3, mariadb,"
-echo "npm, nvm, pip, git, composer, aws cli and angular cli."
+echo "node.js, php, python3, mariadb, npm, nvm, pip, git, composer, aws cli and angular cli."
 
 read -p 'Would you like to continue? [y/N]' answer
 
@@ -34,6 +33,7 @@ if [ $? -eq 0 ]; then
     chmod u+x ./01_setup_deb.sh
     echo "==========================="
     echo "1. Update your Linux distro"
+    echo "==========================="
     ./01_setup_deb.sh
     rm ./01_setup_deb.sh
 else
@@ -46,6 +46,7 @@ if [ $? -eq 0 ]; then
     chmod u+x ./02_install_npm.sh
     echo "============================"
     echo "2. Install Node, NPM and NVM"
+    echo "============================"
     ./02_install_npm.sh
     rm ./02_install_npm.sh
 else
@@ -58,6 +59,7 @@ if [ $? -eq 0 ]; then
     chmod u+x ./03_install_angular_cli.sh
     echo "======================"
     echo "3. Install Angular CLI"
+    echo "======================"
     ./03_install_angular_cli.sh
     rm ./03_install_angular_cli.sh
 else
@@ -70,6 +72,7 @@ if [ $? -eq 0 ]; then
     chmod u+x ./04_install_php.sh
     echo "==========================="
     echo "4. Install PHP and Composer"
+    echo "==========================="
     ./04_install_php.sh
     rm ./04_install_php.sh
 else
@@ -80,14 +83,17 @@ wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/05_install_m
 test -f ./05_install_mariadb.sh
 if [ $? -eq 0 ]; then
     chmod u+x ./05_install_mariadb.sh
-    echo "==========================="
+    echo "=================="
     echo "4. Install MariaDB"
+    echo "=================="
     ./05_install_mariadb.sh
     rm ./05_install_mariadb.sh
 else
     echo "MariaDB setup script failed to download!"
 fi
 
-echo "Close the terminal, open a new window and type: command -v nvm"
-echo "If you see 'nvm' displayed to you, then you are good to go!"
-echo "Also, if you are going to use AWS CLI don't forget to run: aws configure"
+echo ""
+echo "========================================================================"
+echo "Now open a new terminal window to use the installed tools"
+echo "Go to https://github.com/willdiaz/wsl-setup for help and troubleshooting"
+echo "========================================================================"

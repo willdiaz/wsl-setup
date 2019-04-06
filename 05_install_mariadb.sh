@@ -12,8 +12,8 @@ wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/05_reset_root.s
 test -f ./05_reset_root.sql
 if [ $? -eq 0 ]; then
   # run SQL on database, then remove statement
-  sudo mysql < root_reset.sql
+  sudo mysql < 05_reset_root.sql
   rm ./05_reset_root.sql
 else
   echo "Root user reset script failed to download!"
-fi 
+fi
