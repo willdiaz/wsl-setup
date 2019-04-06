@@ -4,11 +4,14 @@ I use Windows Subsystem for Linux (WSL) for web development. It can be a chore t
 
 Running these scripts will install web development tools that I use:
 
-1. Node.js, NPM and NVM
+1. Node.js (8, 10 or 11), NPM and NVM
 1. Angular CLI
 1. PHP and Composer
+1. Python 3 and Pip
+1. SASS
 1. Git
 1. MariaDB
+1. AWS CLI
 1. Linux command line tools cURL, screenfetch, unzip
 1. *bash_aliases* file
 
@@ -59,6 +62,6 @@ The below instructions assume that you just installed one of the above Linux app
 When I get a full set of tools and aliases in place, I'd like to explore creating a [Docker Container](https://www.docker.com/resources/what-container) with this configuration.
 
 ## CHANGELOG
-
++ **2019-04-06:** I added AWS CLI to the install routine. I spent most of my time testing against Debian, so I now have to spend more time on Ubuntu 18.04. I'll try the other distros at some point in the future.
 + **2019-04-06:** I added MariaDB to the install routine. I don't remember running into SSL-related issues when using *wget* from GitHub, but now the script lets you bypass the error with a *no-check-certificate* flag.
 + **2018-11-28:** The *00_setup_wsl.sh* script handles downloading all of the scripts now, making it simple to download and run it. I'm debating whether or not this really needs to be a series of scripts. I should consider consolidating them into a single script.

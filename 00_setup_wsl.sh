@@ -3,7 +3,7 @@
 echo ""
 echo "==========================================================="
 echo "You are about to install several applications, including:"
-echo "node.js, php, python3, mariadb, npm, nvm, pip, git, composer, aws cli and angular cli."
+echo "node.js, php, python3, mariadb, npm, nvm, pip, git, composer, sass, aws cli and angular cli."
 
 read -p 'Would you like to continue? [y/N]' answer
 
@@ -90,6 +90,19 @@ if [ $? -eq 0 ]; then
     rm ./05_install_mariadb.sh
 else
     echo "MariaDB setup script failed to download!"
+fi
+
+wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/06_install_aws_cli.sh
+test -f ./06_install_aws_cli.sh
+if [ $? -eq 0 ]; then
+    chmod u+x ./06_install_aws_cli.sh
+    echo "==================="
+    echo "4. Install AWS CLI"
+    echo "==================="
+    ./06_install_aws_cli.sh
+    rm ./06_install_aws_cli.sh
+else
+    echo "AWS CLI setup script failed to download!"
 fi
 
 echo ""
