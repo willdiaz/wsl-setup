@@ -43,7 +43,7 @@ exit $RESULT
 # IF /USR/LOCAL/BIN EXITS, MOVE COMPOSER THERE
 if [ -d "/usr/local/bin" ]
 then
-	sudo mv ./composer.phar /usr/local/bin/composer
+	mv ./composer.phar ~/.local/bin/composer
 else
   echo "/usr/local/bin not found - composer.phar not moved"
 fi
