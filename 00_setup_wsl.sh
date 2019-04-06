@@ -31,6 +31,7 @@ fi
 wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/01_setup_deb.sh
 test -f ./01_setup_deb.sh
 if [ $? -eq 0 ]; then
+    chmod u+x ./01_setup_deb.sh
     echo "==========================="
     echo "1. Update your Linux distro"
     ./01_setup_deb.sh
@@ -42,6 +43,7 @@ fi
 wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/02_install_npm.sh
 test -f ./02_install_npm.sh
 if [ $? -eq 0 ]; then
+    chmod u+x ./02_install_npm.sh
     echo "============================"
     echo "2. Install Node, NPM and NVM"
     ./02_install_npm.sh
@@ -53,6 +55,7 @@ fi
 wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/03_install_angular_cli.sh
 test -f ./03_install_angular_cli.sh
 if [ $? -eq 0 ]; then
+    chmod u+x ./03_install_angular_cli.sh
     echo "======================"
     echo "3. Install Angular CLI"
     ./03_install_angular_cli.sh
@@ -64,6 +67,7 @@ fi
 wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/04_install_php.sh
 test -f ./04_install_php.sh
 if [ $? -eq 0 ]; then
+    chmod u+x ./04_install_php.sh
     echo "==========================="
     echo "4. Install PHP and Composer"
     ./04_install_php.sh
@@ -75,6 +79,7 @@ fi
 wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/05_install_mariadb.sh
 test -f ./05_install_mariadb.sh
 if [ $? -eq 0 ]; then
+    chmod u+x ./05_install_mariadb.sh
     echo "==========================="
     echo "4. Install MariaDB"
     ./05_install_mariadb.sh
