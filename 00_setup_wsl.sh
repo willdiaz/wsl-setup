@@ -2,8 +2,9 @@
 
 echo ""
 echo "==========================================================="
-echo "You are about to install several applications,"
-echo "including node.js, npm, nvm, angular cli, php and composer."
+echo "You are about to install several applications, including:"
+echo "node.js, php, python3, mariadb,"
+echo "npm, nvm, pip, git, composer, aws cli and angular cli."
 
 read -p 'Would you like to continue? [y/N]' answer
 
@@ -15,6 +16,7 @@ fi
 
 # CREATE BASH ALIASES
 # https://stackoverflow.com/questions/7131670/make-a-bash-alias-that-takes-a-parameter
+# https://www.shellhacks.com/bash-test-if-file-exists/
 test -f ~/.bash_aliases
 if [ $? -eq 1  ]; then
     touch ~/.bash_aliases
@@ -49,7 +51,6 @@ else
 fi
 
 wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/03_install_angular_cli.sh
-# https://www.shellhacks.com/bash-test-if-file-exists/
 test -f ./03_install_angular_cli.sh
 if [ $? -eq 0 ]; then
     echo "======================"
@@ -71,5 +72,17 @@ else
     echo "PHP setup script failed to download!"
 fi
 
+wget https://raw.githubusercontent.com/willdiaz/wsl-setup/master/05_install_mariadb.sh
+test -f ./05_install_mariadb.sh
+if [ $? -eq 0 ]; then
+    echo "==========================="
+    echo "4. Install MariaDB"
+    ./05_install_mariadb.sh
+    rm ./05_install_mariadb.sh
+else
+    echo "MariaDB setup script failed to download!"
+fi
+
 echo "Close the terminal, open a new window and type: command -v nvm"
 echo "If you see 'nvm' displayed to you, then you are good to go!"
+echo "Also, if you are going to use AWS CLI don't forget to run: aws configure"
