@@ -26,21 +26,21 @@ These scripts are meant to be run with the one of the following Linux apps in th
 
 The below instructions assume that you just installed one of the above Linux apps and haven't installed Git or cURL yet.
 
-**Important note:** The *--no-check-certificate* flag is only needed if you get a *ERROR: The certificate of ‘raw.githubusercontent.com’ is not trusted.* when trying to download the script.
+**Important note:** The *--no-check-certificate* flag is only needed if you get a *ERROR: The certificate of ‘raw.githubusercontent.com’ is not trusted.* when trying to download the script, which I only encountered on Debian. Ubuntu does not need that flag to be set.
 
 1. Run the following commands to download the scripts:
   ```
   wget --no-check-certificate https://raw.githubusercontent.com/willdiaz/wsl-setup/master/00_setup_wsl.sh
   ```
-1. Allow the script to be executed:
+2. Allow the script to be executed:
   ```
   chmod u+x 00_setup_wsl.sh
   ```
-1. Run the command:
+3. Run the command:
   ```
   ./00_setup_wsl.sh --no-check-certificate
   ```
-1. Follow the prompts.
+4. Follow the prompts.
 
 ## Just installed, now what?
 
@@ -48,11 +48,11 @@ The below instructions assume that you just installed one of the above Linux app
   ```
   command -v nvm
   ```
-1. If Composer doesn't work, move it to the local bin folder and open a new terminal window.
+2. If Composer doesn't work, move it to the local bin folder and open a new terminal window.
   ```
   sudo mv ~/composer.phar /usr/local/bin/composer
   ```
-1. If you plan on using AWS CLI, be sure to configure it:
+3. If you plan on using AWS CLI, be sure to configure it:
   ```
   aws configure
   ```
