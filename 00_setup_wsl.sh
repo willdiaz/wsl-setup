@@ -14,13 +14,6 @@ then
   exit
 fi
 
-# BYPASS SSL CHECK IF THE FLAG IS SET
-$flag = ""
-if [ $1 == "" ]
-then
-  $flag = "--no-check-certificate"
-fi
-
 # CREATE BASH ALIASES
 # https://stackoverflow.com/questions/7131670/make-a-bash-alias-that-takes-a-parameter
 # https://www.shellhacks.com/bash-test-if-file-exists/
@@ -35,7 +28,7 @@ if [ $? -eq 1  ]; then
 fi
 
 # RUN THE INSTALL SCRIPTS
-wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/01_setup_deb.sh
+wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/01_setup_deb.sh
 test -f ./01_setup_deb.sh
 if [ $? -eq 0 ]; then
     echo "==========================="
@@ -46,7 +39,7 @@ else
     echo "Distro setup script failed to download!"
 fi
 
-wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/02_install_npm.sh
+wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/02_install_npm.sh
 test -f ./02_install_npm.sh
 if [ $? -eq 0 ]; then
     echo "============================"
@@ -57,7 +50,7 @@ else
     echo "NPM install script failed to download!"
 fi
 
-wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/03_install_angular_cli.sh
+wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/03_install_angular_cli.sh
 test -f ./03_install_angular_cli.sh
 if [ $? -eq 0 ]; then
     echo "======================"
@@ -68,7 +61,7 @@ else
     echo "Angular CLI setup script failed to download!"
 fi
 
-wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/04_install_php.sh
+wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/04_install_php.sh
 test -f ./04_install_php.sh
 if [ $? -eq 0 ]; then
     echo "==========================="
@@ -79,7 +72,7 @@ else
     echo "PHP setup script failed to download!"
 fi
 
-wget $flag https://raw.githubusercontent.com/willdiaz/wsl-setup/master/05_install_mariadb.sh
+wget $1 https://raw.githubusercontent.com/willdiaz/wsl-setup/master/05_install_mariadb.sh
 test -f ./05_install_mariadb.sh
 if [ $? -eq 0 ]; then
     echo "==========================="
