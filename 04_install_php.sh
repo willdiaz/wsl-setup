@@ -41,9 +41,9 @@ rm composer-setup.php
 exit $RESULT
 
 # IF /USR/LOCAL/BIN EXITS, MOVE COMPOSER THERE
-if [ -d "/usr/local/bin" ]
+if [ -d "~/.local/bin" ]
 then
 	mv ./composer.phar ~/.local/bin/composer
 else
-  echo "/usr/local/bin not found - composer.phar not moved"
+  echo "~/.local/bin not found - composer.phar not moved"
 fi
