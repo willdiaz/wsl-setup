@@ -90,7 +90,7 @@ test -f ./05_install_mariadb.sh
 if [ $? -eq 0 ]; then
     chmod u+x ./05_install_mariadb.sh
     echo "=================="
-    echo "4. Install MariaDB"
+    echo "5. Install MariaDB"
     echo "=================="
     ./05_install_mariadb.sh
     rm ./05_install_mariadb.sh
@@ -103,7 +103,7 @@ test -f ./06_install_aws_cli.sh
 if [ $? -eq 0 ]; then
     chmod u+x ./06_install_aws_cli.sh
     echo "==================="
-    echo "4. Install AWS CLI"
+    echo "6. Install AWS CLI"
     echo "==================="
     ./06_install_aws_cli.sh
     rm ./06_install_aws_cli.sh

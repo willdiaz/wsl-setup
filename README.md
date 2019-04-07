@@ -50,7 +50,7 @@ The below instructions assume that you just installed one of the above Linux app
   ```
 2. If Composer doesn't work, move it to the local bin folder and open a new terminal window.
   ```
-  sudo mv ~/composer.phar /usr/local/bin/composer
+  sudo mv ~/composer.phar ~/.local/bin/composer
   ```
 3. If you plan on using AWS CLI, be sure to configure it:
   ```
